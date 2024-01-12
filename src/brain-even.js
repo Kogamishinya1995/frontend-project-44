@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
 
-
 export default function randomEvenGame() {
   const yourName = readlineSync.question('May I have your name? ');
   console.log(`Hi ${yourName}!`);
@@ -8,8 +7,9 @@ export default function randomEvenGame() {
   let correctAnswers = 0;
   let consecutiveCorrectAnswers = 0;
   let randomNumber;
+  let gameOver = false;
 
-  while (consecutiveCorrectAnswers < 3) {
+  while (consecutiveCorrectAnswers < 3 && !gameOver) {
     randomNumber = Math.floor(Math.random() * 100) + 1;
     const userAnswer = readlineSync.question(`Is ${randomNumber} an even number? `);
 
@@ -21,10 +21,14 @@ export default function randomEvenGame() {
       correctAnswers++;
       consecutiveCorrectAnswers++;
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       consecutiveCorrectAnswers = 0;
+      console.log(`Let's try again, ${yourName}!`);
+      gameOver = true; // Выход из игры
     }
   }
 
-  console.log(`Congratulations, ${yourName}!`);
+  if (correctAnswers === 3) {
+    console.log(`Congratulations, ${yourName}!`);
+  }
 }
