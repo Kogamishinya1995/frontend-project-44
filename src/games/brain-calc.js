@@ -24,29 +24,30 @@ export default function calculatorGame() {
       case 0:
         expression = `${randomNum1} + ${randomNum2}`;
         correctAnswer = randomNum1 + randomNum2;
-        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `));
+        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `), 10);
         break;
       case 1:
         expression = `${randomNum1} - ${randomNum2}`;
         correctAnswer = randomNum1 - randomNum2;
-        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `));
+        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `), 10);
         break;
       case 2:
         expression = `${randomNum1} * ${randomNum2}`;
         correctAnswer = randomNum1 * randomNum2;
-        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `));
+        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `), 10);
         break;
+      default:
     }
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      correctAnswers++;
-      consecutiveCorrectAnswers++;
+      correctAnswers += 1;
+      consecutiveCorrectAnswers += 1;
     } else {
-      console.log(`${userAnswer} is the wrong answer ;(. The correct answer was ${correctAnswer}.`);
+      console.log(`'${userAnswer}' is the wrong answer ;(. The correct answer was '${correctAnswer}'.`);
       consecutiveCorrectAnswers = 0;
       console.log(`Let's try again, ${yourName}!`);
-      gameOver = true; // Exit the game
+      gameOver = true;
     }
   }
 

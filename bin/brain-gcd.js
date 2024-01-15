@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import userName from '../src/games/cli.js';
+import gcdGame from '../src/games/brain-gcd.js';
 
 console.log('Welcome to the Brain Games!');
-userName();
+gcdGame();

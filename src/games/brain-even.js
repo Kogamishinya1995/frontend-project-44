@@ -18,13 +18,13 @@ export default function randomEvenGame() {
 
     if (userAnswer.toLowerCase() === correctAnswer) {
       console.log('Correct!');
-      correctAnswers++;
-      consecutiveCorrectAnswers++;
+      correctAnswers += 1;
+      consecutiveCorrectAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       consecutiveCorrectAnswers = 0;
       console.log(`Let's try again, ${yourName}!`);
-      gameOver = true; // Выход из игры
+      gameOver = true;
     }
   }
 
