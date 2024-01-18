@@ -47,13 +47,13 @@
 asciinema:
 
 brain-even:
-https://asciinema.org/a/wytE0BDkDB6Mu1dodFZ6pBvcs
+https://asciinema.org/a/7hkLGYFNxWxKRRPrQ3geUQQrg
 
 brain-calc:
-https://asciinema.org/a/CKbBNctVCybQKi15CSFGSwgz5
+https://asciinema.org/a/rAZ6ECMnrjXMDbjM5JpBijRL1
 
 brain-gcd:
-https://asciinema.org/a/eeMmNmsfmu6rDnOzP1m7opim0
+https://asciinema.org/a/AAEqA7ySZEjJRp3nRKLfCR56k
 
 brain-progression:
 https://asciinema.org/a/Pb9lVXcozukTJbAgH3WpU1MCt
