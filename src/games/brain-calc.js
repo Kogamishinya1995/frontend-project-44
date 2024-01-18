@@ -4,7 +4,7 @@ export default function calculatorGame() {
   console.log('Welcome to the Brain Games!');
   const yourName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${yourName}!`);
-  console.log(`What is the result of the expression?`)
+  console.log('What is the result of the expression?');
 
   let correctAnswers = 0;
   let consecutiveCorrectAnswers = 0;
