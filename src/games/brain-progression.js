@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 export default function arithmeticProgressionGame() {
   const yourName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${yourName}!`);
-  console.log('What number is missing in the progression?')
+  console.log('What number is missing in the progression?');
 
   let correctAnswers = 0;
   let consecutiveCorrectAnswers = 0;
