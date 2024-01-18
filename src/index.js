@@ -1,24 +1,27 @@
 import readlineSync from 'readline-sync';
 
-export default function Game() {
+export default function mathGame(gameDescription, generateQuestion, calculateCorrectAnswer) {
+  console.log('Welcome to the Brain Games!');
   const yourName = readlineSync.question('May I have your name? ');
-  console.log(`Hi ${yourName}!`);
+  console.log(`Hello, ${yourName}!`);
+  console.log(gameDescription);
 
   let correctAnswers = 0;
   let consecutiveCorrectAnswers = 0;
   let gameOver = false;
 
   while (consecutiveCorrectAnswers < 3 && !gameOver) {
-    // правила конкретной игры
     const question = generateQuestion();
-    const userAnswer = readlineSync.question(question.prompt);
+    const correctAnswer = calculateCorrectAnswer(question);
 
-    if (checkAnswer(question, userAnswer)) {
+    const userAnswer = parseInt(readlineSync.question(`Question: ${question}\nYour answer: `), 10);
+
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
       correctAnswers += 1;
       consecutiveCorrectAnswers += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${question.answer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       consecutiveCorrectAnswers = 0;
       console.log(`Let's try again, ${yourName}!`);
       gameOver = true;
