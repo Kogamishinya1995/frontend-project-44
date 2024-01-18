@@ -29,7 +29,7 @@ export default function gcdGame() {
       console.log('Correct!');
       correctAnswers += 1;
     } else {
-      console.log(`'${userAnswer}' is the wrong answer ;(. The correct answer was '${correctAnswer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${yourName}!`);
       break;
     }

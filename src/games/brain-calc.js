@@ -1,8 +1,10 @@
 import readlineSync from 'readline-sync';
 
 export default function calculatorGame() {
+  console.log('Welcome to the Brain Games!');
   const yourName = readlineSync.question('May I have your name? ');
-  console.log(`Hi ${yourName}!`);
+  console.log(`Hello, ${yourName}!`);
+  console.log(`What is the result of the expression?`)
 
   let correctAnswers = 0;
   let consecutiveCorrectAnswers = 0;
@@ -24,17 +26,17 @@ export default function calculatorGame() {
       case 0:
         expression = `${randomNum1} + ${randomNum2}`;
         correctAnswer = randomNum1 + randomNum2;
-        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `), 10);
+        userAnswer = parseInt(readlineSync.question(`Question: ${expression}\nYour answer: `), 10);
         break;
       case 1:
         expression = `${randomNum1} - ${randomNum2}`;
         correctAnswer = randomNum1 - randomNum2;
-        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `), 10);
+        userAnswer = parseInt(readlineSync.question(`Question: ${expression}\nYour answer: `), 10);
         break;
       case 2:
         expression = `${randomNum1} * ${randomNum2}`;
         correctAnswer = randomNum1 * randomNum2;
-        userAnswer = parseInt(readlineSync.question(`What is the result of ${expression}? `), 10);
+        userAnswer = parseInt(readlineSync.question(`Question: ${expression}\nYour answer: `), 10);
         break;
       default:
     }
@@ -44,7 +46,7 @@ export default function calculatorGame() {
       correctAnswers += 1;
       consecutiveCorrectAnswers += 1;
     } else {
-      console.log(`'${userAnswer}' is the wrong answer ;(. The correct answer was '${correctAnswer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       consecutiveCorrectAnswers = 0;
       console.log(`Let's try again, ${yourName}!`);
       gameOver = true;

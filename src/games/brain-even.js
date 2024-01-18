@@ -2,16 +2,19 @@ import readlineSync from 'readline-sync';
 
 export default function randomEvenGame() {
   const yourName = readlineSync.question('May I have your name? ');
-  console.log(`Hi ${yourName}!`);
+  console.log(`Hello, ${yourName}!`);
 
   let correctAnswers = 0;
   let consecutiveCorrectAnswers = 0;
   let randomNumber;
   let gameOver = false;
 
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
   while (consecutiveCorrectAnswers < 3 && !gameOver) {
     randomNumber = Math.floor(Math.random() * 100) + 1;
-    const userAnswer = readlineSync.question(`Is ${randomNumber} an even number? `);
+    console.log(`Question: ${randomNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
     const isEven = randomNumber % 2 === 0;
     const correctAnswer = isEven ? 'yes' : 'no';
