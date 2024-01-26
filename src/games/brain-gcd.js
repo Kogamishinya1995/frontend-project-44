@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import mathGame from '../index.js';
 
 function getGCD(a, b) {
   if (b === 0) {
@@ -9,33 +9,20 @@ function getGCD(a, b) {
 }
 
 export default function gcdGame() {
-  const yourName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${yourName}!`);
-  console.log('Find the greatest common divisor of given numbers.');
+  const generateQuestion = () => {
+    const randomNum1 = Math.floor(Math.random() * 100 ) + 1;
+    const randomNum2 = Math.floor(Math.random() * 100 ) + 1;
+    return `${randomNum1} ${randomNum2}`;
+  };
 
-  let correctAnswers = 0;
-  let randomNum1;
-  let randomNum2;
+  const calculateCorrectAnswer = (question) => {
+    const [num1, num2] = question.split(' ');
+    return getGCD(parseInt(num1, 10), parseInt(num2, 10)).toString();
+  };
 
-  while (correctAnswers < 3) {
-    randomNum1 = Math.floor(Math.random() * 100) + 1;
-    randomNum2 = Math.floor(Math.random() * 100) + 1;
-
-    const expression = `Question: ${randomNum1} ${randomNum2}`;
-    const correctAnswer = getGCD(randomNum1, randomNum2);
-    const userAnswer = parseInt(readlineSync.question(`${expression}\nYour answer: `), 10);
-
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      correctAnswers += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${yourName}!`);
-      break;
-    }
-  }
-
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${yourName}!`);
-  }
+  mathGame(
+    'Find the greatest common divisor of given numbers.',
+    generateQuestion,
+    calculateCorrectAnswer
+  );
 }
