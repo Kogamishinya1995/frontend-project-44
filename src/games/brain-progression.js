@@ -1,25 +1,42 @@
 import mathGame from '../index.js';
 
-export default function randomEvenGame() {
+export default function arithmeticProgressionGame() {
   const generateQuestion = () => {
-    const progressionLength = Math.floor(Math.random() * 6) + 5;
+    const progressionLength = 10;
     const hiddenElementPosition = Math.floor(Math.random() * progressionLength);
     const progressionStep = Math.floor(Math.random() * 10) + 1;
 
     let progression = '';
+    let correctAnswer;
+
+    for (let i = 0; i < progressionLength; i += 1) {
+      const element = hiddenElementPosition === i ? '..' : i * progressionStep;
+      progression += `${element} `;
+      if (hiddenElementPosition === i) {
+        correctAnswer = i * progressionStep;
+      }
+    }
+
+    return progression.trim();
   };
 
   const calculateCorrectAnswer = (question) => {
-    const correctAnswer = hiddenElementPosition * progressionStep;
-    for (let i = 0; i < progressionLength; i += 1) {
-    const element = hiddenElementPosition === i ? '..' : i * progressionStep;
-    progression += `${element} `;
+    const elements = question.split(' ');
+    const hiddenElement = elements.find((element) => element === '..');
+    const hiddenElementPosition = elements.indexOf(hiddenElement);
+    const progressionStep = parseInt(elements[1], 10) - parseInt(elements[0], 10);
+
+    return (hiddenElementPosition * progressionStep).toString();
   };
 
-  mathGame('Answer "yes" if the number is even, otherwise answer "no".', generateQuestion, calculateCorrectAnswer);
+  mathGame(
+    'What number is missing in the progression?',
+    generateQuestion,
+    calculateCorrectAnswer
+  );
 }
 
-// import readlineSync from 'readline-sync';
+  // import readlineSync from 'readline-sync';
 
 // export default function arithmeticProgressionGame() {
 //   const yourName = readlineSync.question('May I have your name? ');
