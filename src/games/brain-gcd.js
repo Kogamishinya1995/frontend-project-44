@@ -10,8 +10,8 @@ function getGCD(a, b) {
 
 export default function gcdGame() {
   const generateQuestion = () => {
-    const randomNum1 = Math.floor(Math.random() * 100 ) + 1;
-    const randomNum2 = Math.floor(Math.random() * 100 ) + 1;
+    const randomNum1 = Math.floor(Math.random() * 100) + 1;
+    const randomNum2 = Math.floor(Math.random() * 100) + 1;
     return `${randomNum1} ${randomNum2}`;
   };
 
@@ -23,6 +23,6 @@ export default function gcdGame() {
   mathGame(
     'Find the greatest common divisor of given numbers.',
     generateQuestion,
-    calculateCorrectAnswer
+    calculateCorrectAnswer,
   );
 }
