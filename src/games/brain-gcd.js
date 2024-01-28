@@ -8,7 +8,7 @@ function getGCD(a, b) {
   return getGCD(b, a % b);
 }
 
-export default function gcdGame() {
+export default function runGcdGame() {
   const generateQuestion = () => {
     const randomNum1 = Math.floor(Math.random() * 100) + 1;
     const randomNum2 = Math.floor(Math.random() * 100) + 1;

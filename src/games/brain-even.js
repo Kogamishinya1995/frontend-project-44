@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-export default function randomEvenGame() {
+export default function runRandomEvenGame() {
   const generateQuestion = () => {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     return randomNumber;

@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-export default function primeNumberGame() {
+export default function runPrimeNumberGame() {
   const generateQuestion = () => {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     return randomNumber;

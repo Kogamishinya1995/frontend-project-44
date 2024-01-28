@@ -1,3 +1,25 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/Kogamishinya1995/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Kogamishinya1995/frontend-project-44/actions)
+
+<a href="https://codeclimate.com/github/Kogamishinya1995/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/2b00b7bc3436b7829ced/maintainability" /></a>
+
+asciinema:
+
+brain-even:
+https://asciinema.org/a/7hkLGYFNxWxKRRPrQ3geUQQrg
+
+brain-calc:
+https://asciinema.org/a/rAZ6ECMnrjXMDbjM5JpBijRL1
+
+brain-gcd:
+https://asciinema.org/a/AAEqA7ySZEjJRp3nRKLfCR56k
+
+brain-progression:
+https://asciinema.org/a/Pb9lVXcozukTJbAgH3WpU1MCt
+
+brain-prime:
+https://asciinema.org/a/oFYaY85DbFnMNYZe1wL5aDc2r
+
 # Игры разума
 
 Привет! Это проект "Игры разума" — набор из пяти консольных игр, созданных на JavaScript в стиле популярных приложений для тренировки мозга. 
@@ -38,25 +60,3 @@
 3. Чтобы выйти из игры в любой момент, нажмите `Ctrl+C`.
 
 ## Удачи в тренировке вашего разума!
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Kogamishinya1995/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Kogamishinya1995/frontend-project-44/actions)
-
-<a href="https://codeclimate.com/github/Kogamishinya1995/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/2b00b7bc3436b7829ced/maintainability" /></a>
-
-asciinema:
-
-brain-even:
-https://asciinema.org/a/7hkLGYFNxWxKRRPrQ3geUQQrg
-
-brain-calc:
-https://asciinema.org/a/rAZ6ECMnrjXMDbjM5JpBijRL1
-
-brain-gcd:
-https://asciinema.org/a/AAEqA7ySZEjJRp3nRKLfCR56k
-
-brain-progression:
-https://asciinema.org/a/Pb9lVXcozukTJbAgH3WpU1MCt
-
-brain-prime:
-https://asciinema.org/a/oFYaY85DbFnMNYZe1wL5aDc2r
