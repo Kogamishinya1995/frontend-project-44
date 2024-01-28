@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-export default function startArithmeticProgressionGame() {
+export default function runArithmeticProgressionGame() {
   const generateQuestion = () => {
     const progressionLength = 10;
     const hiddenElementPosition = Math.floor(Math.random() * progressionLength);
