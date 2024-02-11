@@ -1,15 +1,21 @@
+import readlineSync from 'readline-sync';
 import mathGame from '../index.js';
 
 export default function runRandomEvenGame() {
-  const generateQuestion = () => {
+  // Функция генерирующая вопрос и правильный ответ
+  const generateQuestionAndAnswer = () => {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
-    return randomNumber;
+    const question = randomNumber.toString();
+    const correctAnswer = calculateCorrectAnswer(randomNumber);
+
+    return { question, correctAnswer };
   };
 
-  const calculateCorrectAnswer = (question) => {
-    const isEven = question % 2 === 0;
+  // Функция для вычисления правильного ответа
+  const calculateCorrectAnswer = (number) => {
+    const isEven = number % 2 === 0;
     return isEven ? 'yes' : 'no';
   };
 
-  mathGame('Answer "yes" if the number is even, otherwise answer "no".', generateQuestion, calculateCorrectAnswer);
+  mathGame('Answer "yes" if the number is even, otherwise answer "no".', generateQuestionAndAnswer);
 }
