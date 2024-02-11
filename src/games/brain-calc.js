@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-export default function runCalculatorGame() {
+export default function runcalculatorGame() {
   const generateQuestion = () => {
     const randomNumber1 = Math.floor(Math.random() * 100) + 1;
     const randomNumber2 = Math.floor(Math.random() * 100) + 1;
