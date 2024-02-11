@@ -1,55 +1,40 @@
 import mathGame from '../index.js';
 
-export default function runcalculatorGame() {
-  const generateQuestion = () => {
+export default function runCalculatorGame() {
+  // Функция генерирующая вопрос и правильный ответ
+  const generateQuestionAndAnswer = () => {
     const randomNumber1 = Math.floor(Math.random() * 100) + 1;
     const randomNumber2 = Math.floor(Math.random() * 100) + 1;
-    const randomOperator = Math.floor(Math.random() * 3);
+    const operators = ['+', '-', '*'];
+    const randomOperator = operators[Math.floor(Math.random() * operators.length)];
 
-    let expression;
+    const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
+    const correctAnswer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2);
 
-    switch (randomOperator) {
-      case 0:
-        expression = `${randomNumber1} + ${randomNumber2}`;
-        break;
-      case 1:
-        expression = `${randomNumber1} - ${randomNumber2}`;
-        break;
-      case 2:
-        expression = `${randomNumber1} * ${randomNumber2}`;
-        break;
-      default:
-        break;
-    }
-
-    return expression;
+    return { question, correctAnswer };
   };
 
-  const calculateCorrectAnswer = (question) => {
-    const [operand1, operator, operand2] = question.split(' ');
-
+  // Функция для вычисления правильного ответа
+  const calculateCorrectAnswer = (operand1, operator, operand2) => {
     let result;
-
     switch (operator) {
       case '+':
-        result = parseInt(operand1, 10) + parseInt(operand2, 10);
+        result = operand1 + operand2;
         break;
       case '-':
-        result = parseInt(operand1, 10) - parseInt(operand2, 10);
+        result = operand1 - operand2;
         break;
       case '*':
-        result = parseInt(operand1, 10) * parseInt(operand2, 10);
+        result = operand1 * operand2;
         break;
       default:
         break;
     }
-
     return result.toString();
   };
 
   mathGame(
     'What is the result of the expression?',
-    generateQuestion,
-    calculateCorrectAnswer,
+    generateQuestionAndAnswer
   );
 }
