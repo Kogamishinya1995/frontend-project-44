@@ -1,17 +1,5 @@
 import mathGame from '../index.js';
 
-// вопрос и ответ на уровне модуля
-const generateQuestionAndAnswer = () => {
-  const randomNumber1 = Math.floor(Math.random() * 100) + 1;
-  const randomNumber2 = Math.floor(Math.random() * 100) + 1;
-  const operators = ['+', '-', '*'];
-  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
-  const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-  const correctAnswer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2);
-  return { question, correctAnswer };
-};
-
-// вычисление правильного ответа
 const calculateCorrectAnswer = (operand1, operator, operand2) => {
   let result;
   switch (operator) {
@@ -30,10 +18,16 @@ const calculateCorrectAnswer = (operand1, operator, operand2) => {
   return result.toString();
 };
 
+const generateQuestionAndAnswer = () => {
+  const randomNumber1 = Math.floor(Math.random() * 100) + 1;
+  const randomNumber2 = Math.floor(Math.random() * 100) + 1;
+  const operators = ['+', '-', '*'];
+  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
+  const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
+  const correctAnswer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2);
+  return { question, correctAnswer };
+};
 
 export default function runCalculatorGame() {
-  mathGame(
-    'What is the result of the expression?',
-    generateQuestionAndAnswer
-  );
+  mathGame('What is the result of the expression?', generateQuestionAndAnswer);
 }
