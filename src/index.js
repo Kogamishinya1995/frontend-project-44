@@ -16,11 +16,10 @@ export default function mathGame(description, generateQuestionAndAnswer) {
     if (userAnswer.toLowerCase() !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${yourName}!`);
-      return; 
-    } else {
-      console.log('Correct!');
-      consecutiveCorrectAnswers += 1;
+      return;
     }
+    console.log('Correct!');
+    consecutiveCorrectAnswers += 1;
   }
 
   console.log(`Congratulations, ${yourName}!`);

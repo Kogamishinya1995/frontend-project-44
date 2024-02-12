@@ -6,6 +6,7 @@ export default function runPrimeNumberGame() {
     return randomNumber;
   };
 
+  // вынести на уровень модуля
   const isPrime = (num) => {
     for (let i = 2; i < num; i += 1) {
       if (num % i === 0) return false;
@@ -13,6 +14,8 @@ export default function runPrimeNumberGame() {
     return num !== 1;
   };
 
+  // объявить константу и через тернарный оператор в переменной вернуть нужный отве
+  // description in const;
   const calculateCorrectAnswer = (question) => {
     const isNumberPrime = isPrime(question);
     return isNumberPrime ? 'yes' : 'no';

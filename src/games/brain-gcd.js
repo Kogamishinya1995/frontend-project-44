@@ -1,5 +1,7 @@
 import mathGame from '../index.js';
 
+const description = 'Find the greatest common divisor of given numbers.';
+
 function getGCD(a, b) {
   if (b === 0) {
     return a;
@@ -12,19 +14,13 @@ export default function runGcdGame() {
     const randomNum1 = Math.floor(Math.random() * 100) + 1;
     const randomNum2 = Math.floor(Math.random() * 100) + 1;
     const question = `${randomNum1} ${randomNum2}`;
-    const correctAnswer = calculateCorrectAnswer(question);
+    const correctAnswer = String(getGCD(randomNum1, randomNum2));
 
     return { question, correctAnswer };
   };
 
-  const calculateCorrectAnswer = (question) => {
-    const [num1, num2] = question.split(' ');
-    return getGCD(parseInt(num1, 10), parseInt(num2, 10)).toString();
-  };
-
-
   mathGame(
-    'Find the greatest common divisor of given numbers.',
-    generateQuestionAndAnswer
+    description,
+    generateQuestionAndAnswer,
   );
 }

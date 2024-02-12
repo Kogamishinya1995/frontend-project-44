@@ -1,5 +1,9 @@
 import mathGame from '../index.js';
 
+const operators = ['+', '-', '*'];
+
+const description = 'What is the result of the expression?';
+
 const calculateCorrectAnswer = (operand1, operator, operand2) => {
   let result;
   switch (operator) {
@@ -21,7 +25,6 @@ const calculateCorrectAnswer = (operand1, operator, operand2) => {
 const generateQuestionAndAnswer = () => {
   const randomNumber1 = Math.floor(Math.random() * 100) + 1;
   const randomNumber2 = Math.floor(Math.random() * 100) + 1;
-  const operators = ['+', '-', '*'];
   const randomOperator = operators[Math.floor(Math.random() * operators.length)];
   const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
   const correctAnswer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2);
@@ -29,5 +32,5 @@ const generateQuestionAndAnswer = () => {
 };
 
 export default function runCalculatorGame() {
-  mathGame('What is the result of the expression?', generateQuestionAndAnswer);
+  mathGame(description, generateQuestionAndAnswer);
 }

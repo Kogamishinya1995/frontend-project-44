@@ -1,18 +1,15 @@
 import mathGame from '../index.js';
 
+const desctiption = 'Answer "yes" if the number is even, otherwise answer "no".';
+const isEven = (number) => number % 2 === 0;
+
 export const generateQuestionAndAnswer = () => {
   const randomNumber = Math.floor(Math.random() * 100) + 1;
   const question = randomNumber.toString();
-  const correctAnswer = calculateCorrectAnswer(randomNumber);
+  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
   return { question, correctAnswer };
 };
 
-
-const calculateCorrectAnswer = (number) => {
-  const isEven = number % 2 === 0;
-  return isEven ? 'yes' : 'no';
-};
-
 export default function runRandomEvenGame() {
-  mathGame('Answer "yes" if the number is even, otherwise answer "no".', generateQuestionAndAnswer);
+  mathGame(desctiption, generateQuestionAndAnswer);
 }
