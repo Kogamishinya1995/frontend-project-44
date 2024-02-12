@@ -16,7 +16,7 @@ const calculateCorrectAnswer = (operand1, operator, operand2) => {
     case '*':
       result = operand1 * operand2;
       break;
-    default:
+    default: throw new Error('Unknown operator!');
       break;
   }
   return result.toString();
