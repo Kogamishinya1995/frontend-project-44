@@ -19,7 +19,7 @@ const calculateCorrectAnswer = (operand1, operator, operand2) => {
     default:
       throw new Error('Unknown operator!');
   }
-  return result;
+  return result.toString();
 };
 
 const generateQuestionAndAnswer = () => {
@@ -27,8 +27,7 @@ const generateQuestionAndAnswer = () => {
   const randomNumber2 = Math.floor(Math.random() * 100) + 1;
   const randomOperator = operators[Math.floor(Math.random() * operators.length)];
   const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-  const correctAnswer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2)
-    .toString();
+  const correctAnswer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2);
   return { question, correctAnswer };
 };
 
