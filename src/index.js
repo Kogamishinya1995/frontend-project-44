@@ -5,12 +5,11 @@ export default function mathGame(description, generateQuestionAndAnswer) {
   const yourName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${yourName}!\n${description}`);
 
-  let consecutiveCorrectAnswers = 0;
+  const numberOfRounds = 3;
 
-  while (consecutiveCorrectAnswers < 3) {
+  for (let round = 1; round <= numberOfRounds; round += 1) {
     const { question, correctAnswer } = generateQuestionAndAnswer();
     console.log(`Question: ${question}`);
-
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer.toLowerCase() !== correctAnswer) {
@@ -18,8 +17,8 @@ export default function mathGame(description, generateQuestionAndAnswer) {
       console.log(`Let's try again, ${yourName}!`);
       return;
     }
+
     console.log('Correct!');
-    consecutiveCorrectAnswers += 1;
   }
 
   console.log(`Congratulations, ${yourName}!`);
