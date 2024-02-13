@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-const description = 'Find the greatest common divisor of given numbers.';
+const brainGCDDescription = 'Find the greatest common divisor of given numbers.';
 
 function getGCD(a, b) {
   if (b === 0) {
@@ -20,7 +20,7 @@ export default function runGcdGame() {
   };
 
   mathGame(
-    description,
+    brainGCDDescription,
     generateQuestionAndAnswer,
   );
 }

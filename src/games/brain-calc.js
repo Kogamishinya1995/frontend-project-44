@@ -2,7 +2,7 @@ import mathGame from '../index.js';
 
 const operators = ['+', '-', '*'];
 
-const description = 'What is the result of the expression?';
+const brainCalcDescription = 'What is the result of the expression?';
 
 const calculateCorrectAnswer = (operand1, operator, operand2) => {
   let result;
@@ -32,5 +32,5 @@ const generateQuestionAndAnswer = () => {
 };
 
 export default function runCalculatorGame() {
-  mathGame(description, generateQuestionAndAnswer);
+  mathGame(brainCalcDescription, generateQuestionAndAnswer);
 }

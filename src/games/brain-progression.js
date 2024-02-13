@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-const description = 'What number is missing in the progression?';
+const brainProgressionDescription = 'What number is missing in the progression?';
 
 function generateProgression(startNumber, step, length) {
   const progression = [startNumber];
@@ -27,5 +27,5 @@ export function generateQuestionAndAnswer() {
 }
 
 export default function runArithmeticProgressionGame() {
-  mathGame(description, generateQuestionAndAnswer);
+  mathGame(brainProgressionDescription, generateQuestionAndAnswer);
 }

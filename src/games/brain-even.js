@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-const desctiption = 'Answer "yes" if the number is even, otherwise answer "no".';
+const brainEvenDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (number) => number % 2 === 0;
 
 export const generateQuestionAndAnswer = () => {
@@ -11,5 +11,5 @@ export const generateQuestionAndAnswer = () => {
 };
 
 export default function runRandomEvenGame() {
-  mathGame(desctiption, generateQuestionAndAnswer);
+  mathGame(brainEvenDescription, generateQuestionAndAnswer);
 }

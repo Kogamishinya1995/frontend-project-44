@@ -1,6 +1,6 @@
 import mathGame from '../index.js';
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const brainPrimeDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
@@ -18,5 +18,5 @@ const generateQuestionAndAnswer = () => {
 };
 
 export default function runPrimeNumberGame() {
-  mathGame(description, generateQuestionAndAnswer);
+  mathGame(brainPrimeDescription, generateQuestionAndAnswer);
 }
