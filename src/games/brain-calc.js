@@ -27,7 +27,8 @@ const generateQuestionAndAnswer = () => {
   const randomNumber2 = Math.floor(Math.random() * 100) + 1;
   const randomOperator = operators[Math.floor(Math.random() * operators.length)];
   const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-  const correctAnswer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2);
+  const answer = calculateCorrectAnswer(randomNumber1, randomOperator, randomNumber2);
+  const correctAnswer = answer.toString();
   return { question, correctAnswer };
 };
 
